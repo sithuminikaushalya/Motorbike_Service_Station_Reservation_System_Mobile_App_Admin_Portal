@@ -1,7 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
+import 'second_screen.dart';
 import 'sign_up_screen.dart';
 
+// ignore: use_key_in_widget_constructors
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,6 +19,27 @@ class LoginScreen extends StatelessWidget {
 
 // ignore: use_key_in_widget_constructors
 class LoginPage extends StatelessWidget {
+  void _handleSignIn(BuildContext context) async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        // Signed in successfully, navigate to next screen or perform further actions
+        // For example, you can access googleSignInAccount.email to get the email address
+        // and other details.
+      } else {
+        // User canceled the sign-in process
+      }
+    } catch (error) {
+      if (kDebugMode) {
+        print("Error signing in with Google: $error");
+      }
+      // Handle error
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +107,12 @@ class LoginPage extends StatelessWidget {
                         minWidth: double.infinity,
                         height: 40,
                         onPressed: () {
-                          // Add login logic here
+                          // Navigate to the second screen
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SecondScreen()),
+                          );
                         },
                         color: const Color(0xff0095FF),
                         elevation: 0,
@@ -107,7 +136,7 @@ class LoginPage extends StatelessWidget {
                         minWidth: double.infinity,
                         height: 40,
                         onPressed: () {
-                          // Add Google login logic here
+                          _handleSignIn(context); // Initiating Google Sign-In
                         },
                         color: const Color.fromARGB(255, 200, 190, 189),
                         elevation: 0,
