@@ -3,7 +3,7 @@ import 'shops_screen.dart';
 import 'shop_invitations_screen.dart';
 import 'shop_payment_screen.dart';
 import 'subscription_screen.dart';
-import 'settings_screen.dart'; // Import the SettingsScreen
+import 'settings_screen.dart';
 
 // ignore: use_key_in_widget_constructors
 class SecondScreen extends StatefulWidget {

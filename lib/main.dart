@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'theme_provider.dart';
 import 'login_signup_screen.dart';
 
 void main() {
@@ -10,16 +12,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'BikePulse',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        appBarTheme: const AppBarTheme(
-          backgroundColor:
-              Color.fromARGB(255, 126, 173, 244), // Gold color for AppBar
-        ),
+    return ChangeNotifierProvider(
+      create: (_) => ThemeProvider(),
+      child: Consumer<ThemeProvider>(
+        builder: (context, themeProvider, child) {
+          return MaterialApp(
+            title: 'BikePulse',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              appBarTheme: const AppBarTheme(
+                backgroundColor: Color.fromARGB(255, 126, 173, 244),
+              ),
+            ),
+            darkTheme: ThemeData.dark(),
+            themeMode: themeProvider.themeMode,
+            home: const FirstScreen(),
+          );
+        },
       ),
-      home: const FirstScreen(),
     );
   }
 }
@@ -28,7 +38,6 @@ class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _FirstScreenState createState() => _FirstScreenState();
 }
 
@@ -63,11 +72,10 @@ class _FirstScreenState extends State<FirstScreen>
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Bike Reservation - Admin Portal', // Title in the AppBar
+          'Bike Reservation - Admin Portal',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Color.fromARGB(
-                255, 45, 38, 3), // Dark color for better contrast
+            color: Color.fromARGB(255, 45, 38, 3),
           ),
         ),
       ),
@@ -98,8 +106,7 @@ class _FirstScreenState extends State<FirstScreen>
           );
         },
         child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.center, // Align children at the center
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 20.0),
             const Text(
@@ -111,9 +118,9 @@ class _FirstScreenState extends State<FirstScreen>
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 80.0), // Gap below the tagline text
+            const SizedBox(height: 80.0),
             const SpinningImage(),
-            const SizedBox(height: 40.0), // Gap below the image
+            const SizedBox(height: 40.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -122,9 +129,8 @@ class _FirstScreenState extends State<FirstScreen>
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(
-                    255, 121, 109, 42), // Gold color for button
-                foregroundColor: Colors.white, // Button text color
+                backgroundColor: const Color.fromARGB(255, 121, 109, 42),
+                foregroundColor: Colors.white,
                 textStyle: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -137,7 +143,7 @@ class _FirstScreenState extends State<FirstScreen>
               ),
               child: const Text("Get Started"),
             ),
-            const SizedBox(height: 30.0), // Gap below the button
+            const SizedBox(height: 30.0),
           ],
         ),
       ),
@@ -149,7 +155,6 @@ class SpinningImage extends StatefulWidget {
   const SpinningImage({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _SpinningImageState createState() => _SpinningImageState();
 }
 

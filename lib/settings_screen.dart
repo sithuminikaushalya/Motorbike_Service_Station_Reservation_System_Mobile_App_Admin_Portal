@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
+import 'language_screen.dart';
+import 'theme_screen.dart';
+import 'account_info_screen.dart';
+import 'change_password_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'General Settings',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             ListTile(
-              leading: Icon(Icons.language),
-              title: Text('Language'),
-              subtitle: Text('English'),
+              leading: const Icon(Icons.language),
+              title: const Text('Language'),
+              subtitle: const Text('English'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -31,11 +37,11 @@ class SettingsScreen extends StatelessWidget {
                 );
               },
             ),
-            Divider(),
+            const Divider(),
             ListTile(
-              leading: Icon(Icons.color_lens),
-              title: Text('Theme'),
-              subtitle: Text('Light'),
+              leading: const Icon(Icons.color_lens),
+              title: const Text('Theme'),
+              subtitle: const Text('Light'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -43,19 +49,19 @@ class SettingsScreen extends StatelessWidget {
                 );
               },
             ),
-            Divider(),
-            SizedBox(height: 20.0),
-            Text(
+            const Divider(),
+            const SizedBox(height: 20.0),
+            const Text(
               'Account Settings',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Account Info'),
+              leading: const Icon(Icons.person),
+              title: const Text('Account Info'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -63,10 +69,10 @@ class SettingsScreen extends StatelessWidget {
                 );
               },
             ),
-            Divider(),
+            const Divider(),
             ListTile(
-              leading: Icon(Icons.lock),
-              title: Text('Change Password'),
+              leading: const Icon(Icons.lock),
+              title: const Text('Change Password'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -77,64 +83,6 @@ class SettingsScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-// Sub-screens definitions
-
-class LanguageScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Language'),
-      ),
-      body: Center(
-        child: Text('Select your preferred language.'),
-      ),
-    );
-  }
-}
-
-class ThemeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Theme'),
-      ),
-      body: Center(
-        child: Text('Select your preferred theme.'),
-      ),
-    );
-  }
-}
-
-class AccountInfoScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Account Info'),
-      ),
-      body: Center(
-        child: Text('View and edit your account information.'),
-      ),
-    );
-  }
-}
-
-class ChangePasswordScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Change Password'),
-      ),
-      body: Center(
-        child: Text('Change your account password.'),
       ),
     );
   }
