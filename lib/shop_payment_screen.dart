@@ -8,7 +8,6 @@ class ShopPaymentScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Shop Payment'), // Removed const
         centerTitle: true,
-        backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(

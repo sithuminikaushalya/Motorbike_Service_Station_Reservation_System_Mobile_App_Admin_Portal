@@ -21,7 +21,6 @@ class _SecondScreenState extends State<SecondScreen> {
       appBar: AppBar(
         title: null,
         centerTitle: true,
-        backgroundColor: Colors.blue,
         elevation: 4,
       ),
       body: Column(

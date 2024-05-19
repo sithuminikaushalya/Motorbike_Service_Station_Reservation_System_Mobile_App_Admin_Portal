@@ -10,7 +10,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 30,
+        toolbarHeight: 60,
       ),
       body: LoginPage(),
     );
@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 60,
+        toolbarHeight: 30,
         elevation: 0,
         backgroundColor: Colors.white,
         leading: Container(),

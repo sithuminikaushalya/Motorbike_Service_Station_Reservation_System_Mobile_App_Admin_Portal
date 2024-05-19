@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'login_screen.dart';
+import 'second_screen.dart';
 
 // ignore: use_key_in_widget_constructors
 class SignUpScreen extends StatelessWidget {
@@ -43,6 +43,7 @@ class SignUpScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
+              // ignore: avoid_unnecessary_containers
               Container(
                 // Updated: Removed the box decoration
                 child: MaterialButton(
@@ -109,7 +110,11 @@ class SignUpScreen extends StatelessWidget {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
-                // Navigation logic removed
+                // Navigate to the SecondScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondScreen()),
+                );
               },
               child: const Text("OK"),
             ),

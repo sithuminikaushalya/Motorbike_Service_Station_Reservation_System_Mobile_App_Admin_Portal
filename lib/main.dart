@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         builder: (context, themeProvider, child) {
           return MaterialApp(
             title: 'BikePulse',
+            debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.blue,
               appBarTheme: const AppBarTheme(
@@ -38,6 +39,7 @@ class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _FirstScreenState createState() => _FirstScreenState();
 }
 
@@ -155,6 +157,7 @@ class SpinningImage extends StatefulWidget {
   const SpinningImage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _SpinningImageState createState() => _SpinningImageState();
 }
 
