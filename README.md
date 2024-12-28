@@ -1,16 +1,48 @@
-# bike_reservation_admin
+# BikePulse Admin Mobile App
 
-A new Flutter project.
+## 🎥 App Recording
 
-## Getting Started
+<video src="https://github.com/user-attachments/assets/c6721585-f3d4-4bf2-b9a6-6b9aac1012b9" controls width="800"></video>
 
-This project is a starting point for a Flutter application.
+## 🔠 Features
 
-A few resources to get you started if this is your first Flutter project:
+1. **Admin Functionalities:**
+   - Manage service station reservations.
+   - Monitor and manage user accounts.
+   - Configure and update service station details.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Authentication:**
+   - Secure login with Firebase Authentication.
+   - Role-based access control for admins.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. **Firebase Integration:**
+   - Firebase Authentication for secure user access.
+   - Firestore for storing and managing user and reservation data.
+
+## 🔧 Setup Instructions
+
+### Prerequisites
+
+1. Install Flutter: [Flutter Installation Guide](https://docs.flutter.dev/get-started/install).
+2. Set up a Firebase project: [Firebase Console](https://console.firebase.google.com/).
+
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
+   ```
+
+2. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+3. Configure Firebase by adding your `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) files.
+
+4. Run the application:
+   ```bash
+   flutter run
+   ```
+
